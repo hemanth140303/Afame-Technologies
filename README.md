@@ -14,7 +14,7 @@ This is my personal portfolio project developed as part of the Web Development I
 ## 📂 Project Structure
 - `index.html`: Main structure of the portfolio
 - `style.css`: Styling and layout
-- `script.js`: (If used) JavaScript interactions
+- `script.js`: JavaScript interactions
 
 ## ✨ Features
 - Responsive Design
@@ -23,7 +23,7 @@ This is my personal portfolio project developed as part of the Web Development I
 
 ## 👨‍💻 Author
 **Yeruva Hemanth Reddy**  
-[Email](mailto:your-email@example.com)
+[Email](mailto:yhemanthreddy1968@gmail.com)
 
 ## 📌 Internship Details
 - Internship Provider: Afame Technologies

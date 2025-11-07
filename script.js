@@ -14,7 +14,6 @@ const typed = new Typed('.typed-text', {
     strings: [
         'Yeruva Hemanth Reddy',
         'a Computer Science Student',
-        'a Full Stack Developer',
         'a Problem Solver'
     ],
     typeSpeed: 50,

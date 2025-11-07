@@ -450,8 +450,8 @@ button:active::after {
 }
 
 .hero-content h1 {
-    font-size: 4.5rem;
-    line-height: 1.2;
+    font-size: 4.0rem;
+    line-height: 1.0;
     margin-bottom: 2rem;
     animation: fadeInUp 1s ease;
 }

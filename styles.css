@@ -169,7 +169,6 @@ body {
     opacity: 0;
     transform: translateX(100px);
     animation: slideInRight 1s ease forwards, float 6s ease-in-out infinite 1s;
-    margin-top: 40px;
 }
 
 @keyframes slideInRight {

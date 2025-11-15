@@ -3,262 +3,580 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yeruva Hemanth Reddy - Computer Science Student Portfolio showcasing web development projects, problem-solving skills, and technical expertise">
+    <meta name="keywords" content="Computer Science, Portfolio, Web Developer, Problem Solver, Software Engineer, Programming, JavaScript, React, Node.js, Full Stack Developer">
+    <meta name="author" content="Yeruva Hemanth Reddy">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com/">
+    <meta property="og:title" content="Yeruva Hemanth Reddy - Computer Science Student Portfolio">
+    <meta property="og:description" content="Computer Science Student showcasing web development projects and problem-solving skills">
+    <meta property="og:image" content="https://yourportfolio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Yeruva Hemanth Reddy Portfolio">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourportfolio.com/">
+    <meta property="twitter:title" content="Yeruva Hemanth Reddy - Computer Science Student Portfolio">
+    <meta property="twitter:description" content="Computer Science Student showcasing web development projects and problem-solving skills">
+    <meta property="twitter:image" content="https://yourportfolio.com/assets/twitter-image.jpg">
+    <meta property="twitter:creator" content="@yourtwitterhandle">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#0a192f">
+    <meta name="msapplication-TileColor" content="#0a192f">
+    <link rel="canonical" href="https://yourportfolio.com/">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
+    
     <title>Yeruva Hemanth Reddy - Portfolio</title>
 </head>
 <body>
-    <nav class="nav-bar">
-        <div class="logo">
-            <span class="bracket">{</span>
-            <span class="name glow">YHR</span>
-            <span class="bracket">}</span>
+    <!-- Navigation Header -->
+    <header class="nav-bar" role="navigation">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo" role="img" aria-label="YHR Logo">
+                <span class="bracket">{</span>
+                <span class="name glow">YHR</span>
+                <span class="bracket">}</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-links" role="menubar">
+                <a href="#home" class="nav-link active" role="menuitem">Home</a>
+                <a href="#about" class="nav-link" role="menuitem">About</a>
+                <a href="#skills" class="nav-link" role="menuitem">Skills</a>
+                <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+                <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
-        <div class="nav-links">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-                <h1 class="glow">Hello, I'm <span class="typed-text"></span></h1>
-                <p>A Computer Science student at Marri Laxman Reddy Institute of Technology and Management, specializing in problem-solving. I'm passionate about creating efficient solutions and continuously learning new technologies.</p>
-                <div class="social-links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                    <a href="https://github.com/hemanth140303" target="_blank" aria-label="GitHub Profile">
+    <!-- Hero Section -->
+    <main>
+        <section id="home" class="hero" role="banner">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                        <h1 class="hero-title">
+                            Hello, I'm <span class="typed-text"></span>
+                        </h1>
+                        <p class="hero-description">
+                            A Computer Science student at Marri Laxman Reddy Institute of Technology and Management, specializing in problem-solving. I'm passionate about creating efficient solutions and continuously learning new technologies.
+                        </p>
+                        
+                        <!-- Social Links -->
+                        <div class="social-links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" role="navigation" aria-label="Social Media Links">
+                            <a href="https://github.com/hemanth140303" target="_blank" aria-label="GitHub Profile" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/yeruva-hemanth-reddy-81774918b/" target="_blank" aria-label="LinkedIn Profile" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:yhemanthreddy1968@gmail.com" aria-label="Email Me" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:+919515793125" aria-label="Call Me" class="social-link">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Hero Buttons -->
+                        <div class="hero-buttons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                            <button onclick="location.href='#projects'" class="btn btn-primary float-animation">
+                                <span>View My Work</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button onclick="location.href='#contact'" class="btn btn-secondary">
+                                <span>Get In Touch</span>
+                                <i class="fas fa-message"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Image -->
+                    <div class="profile-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="image-wrapper">
+                            <img src="images/profile.jpg" alt="Yeruva Hemanth Reddy" loading="lazy">
+                            <div class="image-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-down">
+                    <h2 class="section-title glow">About Me</h2>
+                    <p class="section-subtitle">Discover my journey and expertise</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <p class="about-intro">
+                            A highly motivated and qualified individual with strong knowledge of programming languages, seeking a role in a reputed organization. Aiming to contribute to the company's success while continuously enhancing my skills.
+                        </p>
+                        
+                        <div class="expertise-section">
+                            <h3>Core Expertise</h3>
+                            <div class="expertise-grid">
+                                <div class="expertise-item">
+                                    <i class="fas fa-code"></i>
+                                    <div>
+                                        <h4>Programming</h4>
+                                        <p>Java, JavaScript, HTML, CSS</p>
+                                    </div>
+                                </div>
+                                <div class="expertise-item">
+                                    <i class="fas fa-database"></i>
+                                    <div>
+                                        <h4>Database</h4>
+                                        <p>SQL</p>
+                                    </div>
+                                </div>
+                                <div class="expertise-item">
+                                    <i class="fas fa-brain"></i>
+                                    <div>
+                                        <h4>Core Concepts</h4>
+                                        <p>Data Structures, OOP</p>
+                                    </div>
+                                </div>
+                                <div class="expertise-item">
+                                    <i class="fas fa-tools"></i>
+                                    <div>
+                                        <h4>Tools</h4>
+                                        <p>Git/GitHub, VS Code</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="about-passion">
+                            I've actively participated in the Forge Code-a-thon at my college and worked collaboratively with a team to solve the Target Sum N problem. My passion for technology and problem-solving drives me to continuously learn and grow in this field.
+                        </p>
+                    </div>
+                    
+                    <div class="about-education" data-aos="fade-left">
+                        <div class="education-card float-animation">
+                            <div class="card-header">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h3>Education</h3>
+                            </div>
+                            <div class="education-list">
+                                <div class="education-item">
+                                    <div class="education-degree">
+                                        <h4>B.Tech. Computer Science</h4>
+                                        <span class="education-period">2021 - 2025</span>
+                                    </div>
+                                    <div class="education-details">
+                                        <p class="institution">Marri Laxman Reddy Institute of Technology and Management</p>
+                                        <p class="gpa">Current GPA: 7.67/10.0</p>
+                                        <div class="courses">
+                                            <span class="course-tag">OOP</span>
+                                            <span class="course-tag">Data Structures</span>
+                                            <span class="course-tag">DBMS</span>
+                                            <span class="course-tag">Computer Networks</span>
+                                            <span class="course-tag">Operating System</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="education-item">
+                                    <div class="education-degree">
+                                        <h4>Intermediate, MPC</h4>
+                                        <span class="education-period">2019 - 2021</span>
+                                    </div>
+                                    <div class="education-details">
+                                        <p class="institution">Narayana Junior College</p>
+                                        <p class="percentage">Percentage: 55.56</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="education-item">
+                                    <div class="education-degree">
+                                        <h4>Secondary School Certificate</h4>
+                                        <span class="education-period">2018 - 2019</span>
+                                    </div>
+                                    <div class="education-details">
+                                        <p class="institution">Narayana High School</p>
+                                        <p class="grade">Grade: 8.8</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-down">
+                    <h2 class="section-title glow">Technical Skills</h2>
+                    <p class="section-subtitle">Technologies and tools I work with</p>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-card" data-aos="fade-up" data-progress="90">
+                        <div class="skill-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h3>Programming Languages</h3>
+                            <p>Java, JavaScript, HTML, CSS</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" data-aos="fade-up" data-progress="85">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h3>Database</h3>
+                            <p>SQL</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" data-aos="fade-up" data-progress="85">
+                        <div class="skill-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h3>Core Concepts</h3>
+                            <p>Data Structures, Object-Oriented Programming</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" data-aos="fade-up" data-progress="80">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h3>Development Tools</h3>
+                            <p>Git, GitHub, VS Code</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" data-aos="fade-up" data-progress="85">
+                        <div class="skill-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h3>Coursework</h3>
+                            <p>OOP, Data Structures, DBMS, Networks, OS</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" data-aos="fade-up" data-progress="90">
+                        <div class="skill-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h3>Soft Skills</h3>
+                            <p>Problem-Solving, Communication, Teamwork</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-down">
+                    <h2 class="section-title glow">Featured Projects</h2>
+                    <p class="section-subtitle">Explore my recent work and contributions</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <article class="project-card" data-aos="fade-up">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3>Tic Tac Toe</h3>
+                        </div>
+                        <p class="project-description">
+                            Developed an interactive Tic-Tac-Toe game with both single-player and multiplayer modes. Implemented restart and undo functionality to enhance playability.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">VS Code</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/hemanth140303/TicTacToe" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" data-aos="fade-up">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3>Interior Design Portfolio</h3>
+                        </div>
+                        <p class="project-description">
+                            A modern interior design portfolio showcasing beautiful living spaces, kitchens, and bedrooms. Features responsive design and elegant image galleries.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Responsive Design</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/hemanth140303/interior-design-website" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <h3>Weather Dashboard</h3>
+                        </div>
+                        <p class="project-description">
+                            Interactive weather application providing real-time weather updates, forecasts, and location-based weather information with dynamic weather icons.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Weather API</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Responsive Design</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/hemanth140303/weather/tree/main/intern" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-dragon"></i>
+                            </div>
+                            <h3>Snake Game</h3>
+                        </div>
+                        <p class="project-description">
+                            Classic snake game implementation with modern features. Players control the snake to collect food while avoiding collisions with score tracking.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML5 Canvas</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Game Development</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/hemanth140303/snakegame" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <h3>Quiz App</h3>
+                        </div>
+                        <p class="project-description">
+                            Developed an interactive Quiz App that allows users to test their knowledge on various topics with dynamic question loading from JSON API.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JSON</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">VS Code</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/hemanth140303/quizapp" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>View Code</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-down">
+                    <h2 class="section-title glow">Get In Touch</h2>
+                    <p class="section-subtitle">Let's connect and discuss opportunities</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-grid">
+                            <a href="mailto:yhemanthreddy1968@gmail.com" class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <p>yhemanthreddy1968@gmail.com</p>
+                                </div>
+                                <div class="contact-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            
+                            <a href="tel:+919515793125" class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Phone</h3>
+                                    <p>+91 95157 93125</p>
+                                </div>
+                                <div class="contact-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Location</h3>
+                                    <p>Hyderabad, India</p>
+                                </div>
+                                <div class="contact-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            
+                            <a href="https://github.com/hemanth140303" target="_blank" class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>GitHub</h3>
+                                    <p>github.com/hemanth140303</p>
+                                </div>
+                                <div class="contact-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/yeruva-hemanth-reddy-81774918b/" target="_blank" class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>LinkedIn</h3>
+                                    <p>LinkedIn Profile</p>
+                                </div>
+                                <div class="contact-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>
+                        &copy; 2024 Yeruva Hemanth Reddy. Built with 
+                        <i class="fas fa-heart"></i> and Modern Web Technologies
+                    </p>
+                    <p>Computer Science Student at MLRITM</p>
+                </div>
+                
+                <div class="footer-social" data-aos="fade-up" data-aos-duration="800">
+                    <a href="https://github.com/hemanth140303" target="_blank" aria-label="GitHub Profile" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/yeruva-hemanth-reddy-81774918b/" target="_blank" aria-label="LinkedIn Profile">
+                    <a href="https://www.linkedin.com/in/yeruva-hemanth-reddy-81774918b/" target="_blank" aria-label="LinkedIn Profile" class="social-link">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="mailto:yhemanthreddy1968@gmail.com" aria-label="Email Me">
+                    <a href="mailto:yhemanthreddy1968@gmail.com" aria-label="Email Me" class="social-link">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="tel:+919515793125" aria-label="Call Me">
+                    <a href="tel:+919515793125" aria-label="Call Me" class="social-link">
                         <i class="fas fa-phone"></i>
                     </a>
                 </div>
-                <div class="hero-buttons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                    <button onclick="location.href='#projects'" class="float-animation">View My Work</button>
-                    <button onclick="location.href='#contact'">Get In Touch</button>
-                </div>
-            </div>
-            <div class="profile-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                <img src="images/profile.jpg" alt="Yeruva Hemanth Reddy">
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="about-content">
-            <div class="about-text" data-aos="fade-right">
-                <h2 class="glow">About Me</h2>
-                <p>A highly motivated and qualified individual with strong knowledge of programming languages, seeking a role in a reputed organization. Aiming to contribute to the company's success while continuously enhancing my skills.</p>
-                <p>My core expertise includes:</p>
-                <ul>
-                    <li>Programming Languages: Java, JavaScript, HTML, CSS</li>
-                    <li>Database Language: SQL</li>
-                    <li>Core Concepts: Data Structures, Object-Oriented Programming (OOP)</li>
-                    <li>Tools: Git/GitHub, VS Code</li>
-                    <li>Soft Skills: Problem-Solving, Effective Communication, Teamwork, Time Management</li>
-                </ul>
-                <p>I've actively participated in the Forge Code-a-thon at my college and worked collaboratively with a team to solve the Target Sum N problem. My passion for technology and problem-solving drives me to continuously learn and grow in this field.</p>
-            </div>
-            <div class="about-image" data-aos="fade-left">
-                <div class="education-box float-animation">
-                    <h3>Education</h3>
-                    <div class="education-item">
-                        <h4>B.Tech. Computer Science</h4>
-                        <p>Marri Laxman Reddy Institute of Technology and Management</p>
-                        <p>2021 - 2025</p>
-                        <p>Current GPA: 7.67/10.0</p>
-                        <p class="courses">Courses: Object-Oriented Programming, Data Structures, Database Management System, Computer Networks, Operating System</p>
-                    </div>
-                    <div class="education-item">
-                        <h4>Intermediate, MPC</h4>
-                        <p>Narayana Junior College</p>
-                        <p>2019 - 2021</p>
-                        <p>Percentage: 55.56</p>
-                    </div>
-                    <div class="education-item">
-                        <h4>Secondary School Certificate(SSC)</h4>
-                        <p>Narayana High School</p>
-                        <p>2015 - 2019</p>
-                        <p>Grade: 8.8</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-title glow" data-aos="fade-down">Technical Skills</h2>
-        <div class="skills-container">
-            <div class="skill-item" data-aos="fade-up" data-progress="90">
-                <h3>Programming Languages</h3>
-                <p>Java, JavaScript, HTML, CSS</p>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-progress="85">
-                <h3>Database</h3>
-                <p>SQL</p>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-progress="85">
-                <h3>Core Concepts</h3>
-                <p>Data Structures, Object-Oriented Programming (OOP)</p>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-progress="80">
-                <h3>Development Tools</h3>
-                <p>Git, GitHub, VS Code</p>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-progress="85">
-                <h3>Coursework</h3>
-                <p>Object-Oriented Programming, Data Structures, Database Management System, Computer Networks, Operating System</p>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-progress="90">
-                <h3>Soft Skills</h3>
-                <p>Problem-Solving, Effective Communication, Teamwork, Time Management</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title glow" data-aos="fade-down">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card" data-aos="fade-up">
-                <h3>Tic Tac Toe</h3>
-                <p>Developed an interactive Tic-Tac-Toe game with both single-player and multiplayer modes. Implemented restart and undo functionality to enhance playability.</p>
-                <div class="project-tags">
-                    <span>JavaScript</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>VS Code</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/hemanth140303/TicTacToe" target="_blank">Source Code</a>
-                </div>
-            </div>
-            <div class="project-card" data-aos="fade-up">
-                <h3>Interior Design Portfolio</h3>
-                <p>A modern interior design portfolio showcasing beautiful living spaces, kitchens, and bedrooms. Features responsive design and elegant image galleries for an immersive viewing experience.</p>
-                <div class="project-tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Responsive Design</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/hemanth140303/interior-design-website" target="_blank">Source Code</a>
-                </div>
-            </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                <h3>Weather Dashboard</h3>
-                <p>Interactive weather application providing real-time weather updates, forecasts, and location-based weather information. Features a clean, modern UI with dynamic weather icons and responsive design.</p>
-                <div class="project-tags">
-                    <span>JavaScript</span>
-                    <span>Weather API</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>Responsive Design</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/hemanth140303/weather/tree/main/intern" target="_blank">Source Code</a>
-                </div>
-            </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                <h3>Snake Game</h3>
-                <p>Classic snake game implementation with modern features. Players control the snake to collect food while avoiding collisions. Includes score tracking and increasing difficulty levels.</p>
-                <div class="project-tags">
-                    <span>JavaScript</span>
-                    <span>HTML5 Canvas</span>
-                    <span>CSS</span>
-                    <span>Game Development</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/hemanth140303/snakegame" target="_blank">Source Code</a>
-                </div>
-            </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                <h3>Quiz App</h3>
-                <p>Developed an interactive Quiz App that allows users to test their knowledge on various topics. Implemented dynamic question loading from a JSON API to ensure a diverse quiz experience.</p>
-                <div class="project-tags">
-                    <span>JavaScript</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JSON</span>
-                    <span>Git</span>
-                    <span>VS Code</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/hemanth140303/quizapp" target="_blank">Source Code</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-        <div class="contact-container">
-            <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:yhemanthreddy1968@gmail.com">yhemanthreddy1968@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+919515793125">+91 95157 93125</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Hyderabad, India</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/hemanth140303" target="_blank">github.com/hemanth140303</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin-in"></i>
-                    <a href="https://www.linkedin.com/in/yeruva-hemanth-reddy-81774918b/" target="_blank">LinkedIn Profile</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-text">
-                <p>&copy; 2024 Yeruva Hemanth Reddy. Built with <i class="fas fa-heart"></i> and Modern Web Technologies</p>
-                <p>Computer Science Student at MLRITM</p>
-            </div>
-            <div class="social-links" data-aos="fade-up" data-aos-duration="800">
-                <a href="https://github.com/hemanth140303" target="_blank" aria-label="GitHub Profile">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/yeruva-hemanth-reddy-81774918b/" target="_blank" aria-label="LinkedIn Profile">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:yhemanthreddy1968@gmail.com" aria-label="Email Me">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="tel:+919515793125" aria-label="Call Me">
-                    <i class="fas fa-phone"></i>
-                </a>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>

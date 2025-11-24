@@ -288,33 +288,12 @@ if (skillsSection) {
 }
 
 // ===================================
-// PROJECT CARD INTERACTIONS
+// PROJECT CARD INTERACTIONS - TILT EFFECTS DISABLED
 // ===================================
 
 const projectCards = document.querySelectorAll('.project-card');
 
-projectCards.forEach(card => {
-    // Add tilt effect on mouse move (desktop only)
-    if (window.matchMedia('(min-width: 1024px)').matches) {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
-    }
-});
+// Tilt effects have been removed - project cards are now static
 
 // ===================================
 // SCROLL PROGRESS INDICATOR

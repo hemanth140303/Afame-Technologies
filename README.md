@@ -3,7 +3,7 @@
 This is my personal portfolio project developed as part of the Web Development Internship at **Afame Technologies** (May–June 2025).
 
 ## 🔗 Live Demo
-👉 [View My Portfolio](https://port-fawn-omega.vercel.app/)
+👉 [View My Portfolio](https://port-lwz6duri7-hemanth-reddys-projects-aea1f1af.vercel.app)
 
 ## 🛠️ Tech Stack
 - HTML5

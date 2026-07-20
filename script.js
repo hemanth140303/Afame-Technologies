@@ -400,6 +400,30 @@ window.addEventListener('unhandledrejection', (e) => {
 });
 
 // ===================================
+// OS DETECTION FOR CUSTOM MOBILE UI
+// ===================================
+const detectAndApplyOS = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const body = document.body;
+
+    // Detect iOS devices (iPhone, iPad, iPod)
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        body.classList.add('ios-ui');
+        console.log('Applied iOS Cupertino UI 🍏');
+    } 
+    // Detect Android devices
+    else if (/android/i.test(userAgent)) {
+        body.classList.add('android-ui');
+        console.log('Applied Android Material UI 🤖');
+    } 
+    // Default to Standard Desktop UI
+    else {
+        body.classList.add('desktop-ui');
+        console.log('Applied Desktop UI 💻');
+    }
+};
+
+// ===================================
 // INITIALIZATION
 // ===================================
 
@@ -408,6 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize all features
     updateScrollProgress();
     animateSkills();
+    detectAndApplyOS();
     
     // Add loading complete class
     body.classList.add('loaded');

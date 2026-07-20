@@ -1,8 +1,7 @@
 /* ===================================
    MOBILE-FIRST RESPONSIVE CSS
-   Modern UI/UX with Fluid Typography
+   Modern UI/UX with Fluid Typography & Auto-Ratio
    =================================== */
-
 
 /* CSS Custom Properties - Design System */
 :root {
@@ -71,7 +70,7 @@
     --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Reset & Base Styles */
+/* Reset & Base Styles - Updated to fix overflow/footer glitch */
 * {
     margin: 0;
     padding: 0;
@@ -84,7 +83,12 @@
     box-sizing: inherit;
 }
 
-html {
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrollbar & right-edge dark strip */
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
@@ -97,7 +101,6 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background: var(--bg-color);
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -299,7 +302,6 @@ ul, ol {
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
     }
 
-    /* Project buttons mobile stacking */
     .project-buttons {
         flex-direction: column;
         align-items: stretch;
@@ -356,7 +358,7 @@ ul, ol {
 }
 
 /* ===================================
-   HERO SECTION - MOBILE FIRST
+   HERO SECTION - AUTO RATIO & NO MERGING
    =================================== */
 
 .hero {
@@ -366,6 +368,9 @@ ul, ol {
     background: radial-gradient(circle at 50% 50%, rgba(100, 255, 218, 0.1) 0%, rgba(10, 25, 47, 0) 50%);
     position: relative;
     overflow: hidden;
+    padding-top: clamp(80px, 12vh, 120px); /* Prevents fixed navbar from merging into header */
+    padding-bottom: var(--space-12);
+    box-sizing: border-box;
 }
 
 .hero-container {
@@ -377,13 +382,16 @@ ul, ol {
 
 .hero-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse; /* Stacks image above text on mobile automatically */
     align-items: center;
+    justify-content: space-between;
     text-align: center;
     gap: var(--space-12);
+    width: 100%;
 }
 
 .hero-text {
+    flex: 1 1 400px;
     max-width: 600px;
     width: 100%;
 }
@@ -510,10 +518,13 @@ ul, ol {
     box-shadow: var(--shadow-lg);
 }
 
-/* Profile Image */
+/* Profile Image - Fluid Auto-Ratio Scaling */
 .profile-image {
-    width: 280px;
-    height: 350px;
+    flex: 1 1 280px;
+    width: 100%;
+    max-width: clamp(260px, 35vw, 380px);
+    aspect-ratio: 4 / 5; /* Automatically maintains proportions on all devices */
+    height: auto;
     position: relative;
 }
 
@@ -531,6 +542,7 @@ ul, ol {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform var(--transition-slow);
 }
 
@@ -565,7 +577,6 @@ ul, ol {
    =================================== */
 
 @media (min-width: 768px) {
-    /* Navigation */
     .menu-btn {
         display: none;
     }
@@ -604,22 +615,15 @@ ul, ol {
         width: 100%;
     }
 
-    /* Hero */
     .hero-content {
-        flex-direction: row;
+        flex-direction: row; /* Side-by-side on larger screens */
         text-align: left;
-        gap: var(--space-16);
+        gap: clamp(2rem, 5vw, 5rem);
     }
 
     .hero-text {
         flex: 1;
         max-width: 600px;
-    }
-
-    .profile-image {
-        width: 320px;
-        height: 400px;
-        flex-shrink: 0;
     }
 
     .hero-buttons {
@@ -631,12 +635,63 @@ ul, ol {
     .social-links {
         justify-content: flex-start;
     }
+
+    .about-content {
+        flex-direction: row;
+        gap: var(--space-16);
+    }
+
+    .about-text {
+        flex: 1;
+    }
+
+    .about-education {
+        flex: 1;
+    }
+
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+
+    .project-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-3);
+    }
+
+    .project-link {
+        justify-content: center;
+        min-width: auto;
+        width: 100%;
+        flex: none;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
 }
 
-/* Desktop Styles (1024px and up) */
+/* ===================================
+   DESKTOP STYLES (1024px and up)
+   =================================== */
 
 @media (min-width: 1024px) {
-    /* Typography */
     .section-title {
         font-size: var(--text-5xl);
     }
@@ -649,23 +704,15 @@ ul, ol {
         font-size: var(--text-xl);
     }
 
-    /* Hero */
-    .profile-image {
-        width: 380px;
-        height: 480px;
-    }
-
     .hero-content {
         gap: var(--space-20);
     }
 
-    /* Projects Section - Desktop Grid */
     .projects-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--space-8);
     }
 
-    /* Project buttons desktop layout */
     .project-buttons {
         flex-direction: row;
         align-items: stretch;
@@ -680,6 +727,15 @@ ul, ol {
         width: auto;
         flex: 1 1 0;
     }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
 }
 
 /* ===================================
@@ -690,10 +746,18 @@ ul, ol {
     .hero-title {
         font-size: clamp(3.5rem, 3rem + 2.5vw, 4.5rem);
     }
+
+    .skills-grid {
+        gap: var(--space-8);
+    }
+
+    .projects-grid {
+        gap: var(--space-10);
+    }
 }
 
 /* ===================================
-   ABOUT SECTION - MOBILE FIRST
+   ABOUT SECTION
    =================================== */
 
 .about {
@@ -881,7 +945,7 @@ ul, ol {
 }
 
 /* ===================================
-   SKILLS SECTION - MOBILE FIRST
+   SKILLS SECTION
    =================================== */
 
 .skills {
@@ -981,7 +1045,7 @@ ul, ol {
 }
 
 /* ===================================
-   PROJECTS SECTION - MOBILE FIRST
+   PROJECTS SECTION
    =================================== */
 
 .projects {
@@ -1019,7 +1083,6 @@ ul, ol {
     pointer-events: none;
 }
 
-/* Subtle project card hover effects */
 .project-card:hover::before {
     opacity: 1;
 }
@@ -1085,7 +1148,6 @@ ul, ol {
     transition: all var(--transition);
 }
 
-/* Hover effects for project tags */
 .tag:hover {
     background: rgba(100, 255, 218, 0.2);
     transform: translateY(-1px);
@@ -1135,7 +1197,6 @@ ul, ol {
     box-shadow: 0 2px 8px rgba(100, 255, 218, 0.3);
 }
 
-/* Modern pill button hover effects */
 .project-link:hover {
     background: var(--primary-color);
     color: var(--bg-color);
@@ -1164,7 +1225,7 @@ ul, ol {
 }
 
 /* ===================================
-   CONTACT SECTION - MOBILE FIRST
+   CONTACT SECTION
    =================================== */
 
 .contact {
@@ -1270,7 +1331,6 @@ ul, ol {
     font-weight: 500;
 }
 
-/* Ensure proper contrast for contact section */
 .contact .section-title {
     color: var(--primary-color);
 }
@@ -1293,21 +1353,29 @@ ul, ol {
 }
 
 /* ===================================
-   FOOTER - MOBILE FIRST
+   FOOTER - FIXED LAYOUT
    =================================== */
 
 .footer {
+    width: 100%;
     background: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
-    padding: var(--space-12) 0;
+    padding: var(--space-12) 5%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     gap: var(--space-6);
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allows icons to stack safely on tiny screens */
 }
 
 .footer-text {
@@ -1336,112 +1404,15 @@ ul, ol {
 .footer-social {
     display: flex;
     gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-social .social-link {
     width: 40px;
     height: 40px;
     font-size: var(--text-base);
-}
-
-/* ===================================
-   TABLET STYLES (768px and up)
-   =================================== */
-
-@media (min-width: 768px) {
-    /* About Section */
-    .about-content {
-        flex-direction: row;
-        gap: var(--space-16);
-    }
-
-    .about-text {
-        flex: 1;
-    }
-
-    .about-education {
-        flex: 1;
-    }
-
-    .expertise-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Skills Section */
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Projects Section - Tablet Grid */
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-6);
-    }
-
-    /* Project buttons tablet layout */
-    .project-buttons {
-        flex-direction: column;
-        align-items: stretch;
-        gap: var(--space-3);
-    }
-
-    .project-link {
-        justify-content: center;
-        min-width: auto;
-        width: 100%;
-        flex: none;
-    }
-
-    /* Contact Section */
-    .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Footer */
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        text-align: left;
-    }
-}
-
-/* ===================================
-   DESKTOP STYLES (1024px and up)
-   =================================== */
-
-@media (min-width: 1024px) {
-    /* Skills Section */
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Projects Section */
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Contact Section */
-    .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-6);
-    }
-}
-
-/* ===================================
-   LARGE DESKTOP STYLES (1200px and up)
-   =================================== */
-
-@media (min-width: 1200px) {
-    /* Skills Section */
-    .skills-grid {
-        gap: var(--space-8);
-    }
-
-    /* Projects Section */
-    .projects-grid {
-        gap: var(--space-10);
-    }
 }
 
 /* ===================================
@@ -1557,4 +1528,51 @@ a:focus-visible {
     .section {
         padding: 2rem 0;
     }
+}
+
+/* ===================================
+   OS-SPECIFIC UI DESIGN LANGUAGES
+   =================================== */
+
+/* iOS UI (Cupertino Aesthetic - Soft Glassmorphism & Curves) */
+.ios-ui {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+}
+
+.ios-ui .btn, 
+.ios-ui .project-card, 
+.ios-ui .skill-card, 
+.ios-ui .contact-grid {
+    border-radius: 18px;
+    background: rgba(17, 34, 64, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.ios-ui .nav-bar {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+}
+
+/* Android UI (Material Design - Sharp Corners & Bold Elevation) */
+.android-ui {
+    font-family: "Roboto", "Segoe UI", sans-serif;
+}
+
+.android-ui .btn, 
+.android-ui .project-card, 
+.android-ui .skill-card, 
+.android-ui .contact-grid {
+    border-radius: 8px;
+    background: #112240;
+    border: none;
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.4), 
+                0 3px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+.android-ui .btn {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
